@@ -1,21 +1,15 @@
 import './App.css';
-
-const user = {
-  firstName: "John",
-  lastName: "Doe"
-}
-function getUserName(user) {
-  if (user) {
-    return user.firstName + " " + user.lastName;
-  }
-  return "Stranger";
-}
+import APP_CONSTANTS from "./app-constants";
+import Greetings from "./components/greetings";
+import UsersList from "./components/user-list";
 
 function App() {
+  const admin = APP_CONSTANTS.ADMIN_USER;
+
   return (
-    <div className="App">
-      <h1 className="greetings">Hello {getUserName(user)} !!</h1>
-      <h1 className="greetings-stranger">Hello {getUserName()} !!</h1>
+    <div>
+      <Greetings user={admin} />
+      <UsersList />
     </div>
   );
 }
